@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tomcatProjectProperties>
+    <rootDir>/</rootDir>
+    <exportSource>false</exportSource>
+    <reloadable>true</reloadable>
+    <redirectLogger>false</redirectLogger>
+    <updateXml>true</updateXml>
+    <warLocation>C:\Users\uemura\Desktop\cmanage\export\cmanage_ssi.war</warLocation>
+    <extraInfo></extraInfo>
+    <webPath>/cmanage_ssi</webPath>
+</tomcatProjectProperties>

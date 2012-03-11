@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="cmanage">
+
+    <resultMap id="customerMasterDto" class="org.uepon.dto.CustomerMasterDto">
+        <result column="customer_id" property="customerId"/>
+        <result column="name" property="name"/>
+        <result column="shozoku_kigyo" property="shozokuKigyo"/>
+        <result column="yubin_no" property="yubinNo"/>
+        <result column="jusho" property="jusho"/>
+        <result column="tel" property="tel"/>
+        <result column="mobile_tel" property="mobileTel"/>
+        <result column="shokushu_cd" property="shokushuCd"/>
+    </resultMap>
+
+    <select id="findById" resultMap="customerMasterDto" parameterClass="java.lang.Long" >
+        SELECT * FROM customer_master WHERE customer_id=#value#
+    </select>
+
+    <select id="findPage" resultMap="customerMasterDto">
+        SELECT * FROM customer_master ORDER BY customer_id limit #offset#, #limit#
+    </select>
+
+    <select id="findAll" resultMap="customerMasterDto">
+        SELECT * FROM customer_master ORDER BY customer_id
+    </select>
+
+    <select id="findAllCount" resultClass="java.lang.Integer">
+        SELECT count(*) FROM customer_master
+    </select>
+
+    <update id="updateCmanage" parameterClass="org.uepon.dto.CustomerMasterDto">
+        UPDATE
+            customer_master
+        SET
+            name=#name#,
+            shozoku_kigyo=#shozokuKigyo#,
+            yubin_no=#yubinNo#,
+            jusho=#jusho#,
+            tel=#tel#,
+            mobile_tel=#mobileTel#,
+            shokushu_cd=#shokushuCd#
+        WHERE
+            customer_id=#customerId#
+    </update>
+
+    <insert id="insertCmanage" parameterClass="org.uepon.dto.CustomerMasterDto">
+        INSERT INTO customer_master (
+        name,
+        shozoku_kigyo,
+        yubin_no,
+        jusho,
+        tel,
+        mobile_tel,
+        shokushu_cd
+        )
+        VALUES (#name#,#shozokuKigyo#,#yubinNo#,#jusho#,#tel#,#mobileTel#,#shokushuCd#)
+    </insert>
+    <delete id="deleteCmanage" parameterClass="java.lang.Long" >
+        DELETE FROM
+            customer_master
+        WHERE
+            customer_id=#value#
+    </delete>
+</sqlMap>
