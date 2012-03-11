@@ -1,0 +1,9 @@
+#Mon Feb 20 15:56:16 JST 2012
+DaoType=S2JDBC
+DefaultResourcePath=/cmanage_s2/src/main/resources
+DefaultRootPackage=org.uepon
+DefaultSrcPath=/cmanage_s2/src/main/java
+ServletPath=/cmanage_s2
+ViewType=SA-Struts
+WebContentsRoot=src/main/webapp/
+eclipse.preferences.version=1

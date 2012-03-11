@@ -1,0 +1,21 @@
+table.ctable {
+  margin-top: 0.2em;
+  margin-bottom: 1em;
+  width: 800x;
+  border-collapse: collapse;
+  border: solid 1px #999;
+  font-size: 100%;
+}
+
+table.ctable th,
+table.ctable td {
+  border: solid 1px #999;
+  padding: 4px 6px;
+}
+
+table.ctable th {
+  background: #E6E6E6;
+  text-align: center;
+  white-space: nowrap;
+  color: #666;
+}
